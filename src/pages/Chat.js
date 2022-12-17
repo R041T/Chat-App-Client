@@ -3,7 +3,7 @@ export function Chat(){
         <>
         
         <header></header>
-        <main>Chat</main>
+        <main>Chat dev</main>
         <footer></footer>
         </>
     
