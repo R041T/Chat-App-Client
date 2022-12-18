@@ -1,0 +1,9 @@
+.loginBtn{
+    width: 200px;
+    height: inherit;
+    background: rgb(176,59,151);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    background: linear-gradient(90deg, rgba(176,59,151,1) 0%, rgba(253,29,54,1) 100%);}

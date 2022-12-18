@@ -1,0 +1,15 @@
+.signupBtn{
+    width: 100px;
+    height: inherit;
+    color: white;
+
+}
+
+.border-gradient {
+    border-width: 2px;
+    background-color: transparent;
+  border-style: solid;
+  border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+    
+  }
+ 

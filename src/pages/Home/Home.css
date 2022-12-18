@@ -1,0 +1,55 @@
+.home{
+    display: grid;
+    min-height: 100%;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10fr;
+    grid-template-areas: 
+    "main"
+    "header";
+
+    background: rgb(15,10,31);
+background: linear-gradient(310deg, rgba(15,10,31,1) 1%, rgba(16,18,62,1) 48%, rgba(15,10,31,1) 92%);
+}
+
+.main{
+    grid-area: "main";
+    padding:2%;
+    padding-top: 10%;
+    display:flex;
+    justify-content: space-around;
+    color: white;
+}
+
+
+#div-text{
+    height: fit-content;
+
+}
+
+#subheading-text{
+    max-width: 450px;
+    margin-bottom: 30px;
+}
+
+#landing-image{
+    height:fit-content;
+
+}
+
+#landing-text{
+    font-size:50px;
+    max-width: 500px;
+}
+
+em{
+    color: darksalmon;
+}
+
+
+.loginLanding{
+}
+
+.buttons{
+    height: 50px;
+}
