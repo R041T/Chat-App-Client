@@ -6,4 +6,10 @@
     border-radius: 10px;
     color: white;
     font-size: 20px;
-    background: linear-gradient(90deg, rgba(176,59,151,1) 0%, rgba(253,29,54,1) 100%);}
+    background: linear-gradient(90deg, rgba(176,59,151,1) 0%, rgba(253,29,54,1) 100%);
+}
+
+.loginBtn:hover{
+    border: 2px solid;
+    cursor: pointer;
+}
