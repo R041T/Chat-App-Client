@@ -1,0 +1,21 @@
+.chat{
+    display: grid;
+    min-height: 100%;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10fr;
+    grid-template-areas: 
+    "main"
+    "header";
+
+    background: rgb(41,8,80);
+background: linear-gradient(310deg, rgba(41,8,80,1) 1%, rgba(21,23,78,1) 48%, rgba(15,10,31,1) 92%);  
+}
+
+.main{
+    grid-area: "main";
+}
+
+.footer{
+    grid-area: "header";
+}
