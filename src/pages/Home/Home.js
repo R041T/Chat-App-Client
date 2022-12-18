@@ -15,8 +15,11 @@ export function Home(){
                 <p id="landing-text">The <em>Ultimate</em> Communication Platform</p>
                 <p id='subheading-text'> Stay connected with your friends & family without interruption. 
                 Send pictures, Images are more to people instantly accross the world.</p>
-                <div style={{"margin-right":"20px", "display":"inline"}}><LoginButton></LoginButton></div>
-                <div style={{"display":"inline"}}><SignUpButton/></div>
+                <div id="buttons">
+                    <div className='buttons' style={{"margin-right":"20px", "display":"inline"}}><LoginButton></LoginButton></div>
+                    <div className='buttons' style={{"display":"inline"}}><SignUpButton/></div>
+                </div>
+                
             </div>
             <div id="landing-image"><LandingHero/></div>
         </main>

@@ -1,3 +1,21 @@
 #landing-hero{
     min-width: 30vw;
 }
+
+.circles{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 20px 0px 20px ;
+}
+
+.circle{
+    background: lightcoral;
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+}
+
+.circle:nth-of-type(2n-1){
+    opacity: 50%;
+}

@@ -1,6 +1,6 @@
 .loginBtn{
     width: 200px;
-    height: 50px;
+    height: inherit;
     background: rgb(176,59,151);
     border: none;
     border-radius: 10px;
