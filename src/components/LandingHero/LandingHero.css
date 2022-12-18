@@ -16,6 +16,25 @@
     display: inline-block;
 }
 
-.circle:nth-of-type(2n-1){
-    opacity: 50%;
+.circle:nth-of-type(even){
+    opacity: 10%;
+    animation-name: even-circle;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.circle:nth-of-type(odd){
+    opacity: 10%;
+    animation-name: even-circle;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes even-circle{
+    from {opacity: 10%;}
+    to {opacity: 100%;}
 }
