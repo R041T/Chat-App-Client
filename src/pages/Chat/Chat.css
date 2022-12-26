@@ -39,6 +39,7 @@
 .chat-sidenav{
     grid-area: sidenav;
     background: var(--chat-theme);
+    text-align: center;
 }
 
 .main-chat{
