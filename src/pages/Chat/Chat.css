@@ -1,3 +1,7 @@
+:root {
+    --chat-theme: #032734;
+  }
+
 .chat{
     display: grid;
     position: relative;
@@ -17,14 +21,14 @@
     border-top-right-radius: 10px;
     border-bottom: 1px solid;
     border-color: white;
-    background: #366A7B;
+    background: var(--chat-theme);
 
 }
 
 .chat-header{
     grid-area: header;
     border-top-right-radius: 20px;
-    background: #366A7B;
+    background: var(--chat-theme);
     margin: 0px 2px 0px 2px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -34,7 +38,7 @@
 
 .chat-sidenav{
     grid-area: sidenav;
-    background: #366A7B;
+    background: var(--chat-theme);
 }
 
 .main-chat{
@@ -51,7 +55,7 @@
 .tools-nav{
     grid-area: toolsnav;
     border-top-left-radius: 5px;
-    background: #366A7B;
+    background: var(--chat-theme);
 }
 
 .chatbody{
