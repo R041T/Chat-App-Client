@@ -19,6 +19,11 @@
 
 }
 
+#chatinput:focus{
+    border: none;
+    outline: 2px solid darksalmon;
+}
+
 .sendbtn{
     height: 100%;
     width: 70px;

@@ -8,8 +8,8 @@
     "main"
     "header";
 
-    background: rgb(15,10,31);
-background: linear-gradient(310deg, rgba(15,10,31,1) 1%, rgba(16,18,62,1) 48%, rgba(15,10,31,1) 92%);
+    background: rgb(3,39,52);
+    background: linear-gradient(133deg, rgba(3,39,52,1) 2%, rgba(5,54,64,1) 52%, rgba(3,39,52,1) 100%);
 }
 
 .main{
