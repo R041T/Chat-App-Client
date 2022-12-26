@@ -1,21 +1,70 @@
 .chat{
     display: grid;
-    min-height: 100%;
-
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 10fr;
+    position: relative;
+    height: 100%;
+    grid-template-columns: 4fr 10fr 1fr;
+    grid-template-rows: 70px 10fr 1fr;
     grid-template-areas: 
-    "main"
-    "header";
+    "sideheader header toolsnav"
+    "sidenav main toolsnav"
+    "sidenav chatfield toolsnav";
 
-    background: rgb(41,8,80);
-background: linear-gradient(310deg, rgba(41,8,80,1) 1%, rgba(21,23,78,1) 48%, rgba(15,10,31,1) 92%);  
+    
 }
 
-.main{
-    grid-area: "main";
+.sidenav-header{
+    grid-area: sideheader;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid;
+    border-color: white;
+    background: #366A7B;
+
 }
 
-.footer{
-    grid-area: "header";
+.chat-header{
+    grid-area: header;
+    border-top-right-radius: 20px;
+    background: #366A7B;
+    margin: 0px 2px 0px 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+
+.chat-sidenav{
+    grid-area: sidenav;
+    background: #366A7B;
+}
+
+.main-chat{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-area: main;
+    height: 100%;
+    border-right: 0.5px solid;
+    border-color: lightgray;
+
+}
+
+.tools-nav{
+    grid-area: toolsnav;
+    border-top-left-radius: 5px;
+    background: #366A7B;
+}
+
+.chatbody{
+    height: 100%;
+    width: 98%;
+    background: #F6F9FA;
+    border-radius: 2%;
+}
+
+.chat-field-container{
+    display: flex;
+    border-right: 0.5px solid;
+    border-color: lightgray;
+    border-bottom-right-radius: 20px;
+    margin-top: 10px;
 }
