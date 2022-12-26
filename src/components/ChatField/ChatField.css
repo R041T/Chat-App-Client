@@ -1,1 +1,46 @@
 
+#chatinput{
+    height: 100%;
+    width: 90%;
+    border: none;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 15px;
+    font: 1.2rem sans-serif;
+    text-indent: 3%;
+}
+
+.chat-field{
+    display: flex;
+    grid-area: chatfield;
+    height: 90%;
+    width: 100%;
+    margin-left: 3%;
+
+}
+
+.sendbtn{
+    height: 100%;
+    width: 70px;
+    margin-left: 10px;
+    border: none;
+    border-radius:50%;
+    background-color: white;
+    
+}
+
+.sendimg:hover{
+    cursor: pointer;
+}
+
+.sendimg{
+    height: 100%;
+    width: 100%;
+    object-fit:fill;
+}
+
+::placeholder{
+    font-size: 1.2rem;
+    text-indent: 3%;
+}
+
