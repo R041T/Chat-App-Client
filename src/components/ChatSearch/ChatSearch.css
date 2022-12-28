@@ -1,0 +1,28 @@
+
+#searchInput{
+    height: 5%;
+    width: 95%;
+    border: none;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-indent: 19%;
+    margin: 10px 0px 10px 0px;
+    background: url("./search-icon.png");
+    background-repeat: no-repeat;
+    background-color: #115067;
+    background-position: 5%;
+    background-size:5%;
+    color: white;
+}
+
+#searchInput::placeholder{
+    font-size: 1.15em;
+    text-indent: 20%;
+    color: white;
+}
+
+#searchInput:focus{
+    border: none;
+    outline: 1px solid darksalmon;
+}

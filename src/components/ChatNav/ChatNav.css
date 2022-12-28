@@ -1,5 +1,11 @@
 .chatnav-list{
-    height: 98%;
-    width: 99%;
+    height: 100%;
+    width: 100%;
     border-radius: 1%;
+    overflow-y: scroll;
+}
+.chat-item-container{
+    margin-top: 10px;
+    width: inherit;
+    height: 60px;
 }
