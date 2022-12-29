@@ -2,6 +2,10 @@
     --chat-theme: #032734;
   }
 
+html,body{
+    overflow-y: hidden;
+}
+
 .chat{
     display: grid;
     position: relative;
@@ -18,7 +22,6 @@
 
 .sidenav-header{
     grid-area: sideheader;
-    border-top-right-radius: 10px;
     border-bottom: 1px solid;
     border-color: white;
     background: var(--chat-theme);
@@ -27,7 +30,6 @@
 
 .chat-header{
     grid-area: header;
-    border-top-right-radius: 20px;
     background: var(--chat-theme);
     margin: 0px 2px 0px 2px;
     border-top-left-radius: 10px;
@@ -67,6 +69,8 @@
 
 .chatbody{
     height: 100%;
+    max-height: 720px;
+    overflow-y: scroll;
     width: 98%;
     background: #F6F9FA;
     border-radius: 2%;
