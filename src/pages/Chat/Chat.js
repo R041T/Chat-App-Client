@@ -7,8 +7,12 @@ import {MessageBox} from '../../components/MessageBox/MessageBox'
 
 export function Chat(){
     let arr = [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    let arr2 =[{'no':1,'isSelf':false},{'no':1,'isSelf':true},{'no':1,'isSelf':true},{'no':1,'isSelf':true},
+    {'no':1,'isSelf':false},{'no':1,'isSelf':false},{'no':1,'isSelf':true},{'no':1,'isSelf':true},{'no':1,'isSelf':false}
+    ,{'no':1,'isSelf':true},{'no':1,'isSelf':false},{'no':1,'isSelf':true},{'no':1,'isSelf':false},{'no':1,'isSelf':true}
+    ,{'no':1,'isSelf':true},{'no':1,'isSelf':true},{'no':1,'isSelf':true},{'no':1,'isSelf':true},{'no':1,'isSelf':true},{'no':1,'isSelf':true},{'no':1,'isSelf':true}];
 
-    let listItems = arr.map((n,index)=> <div className='messagebox' key={index}><MessageBox/></div>);
+    let listItems = arr2.map((n,index)=> <div className='messagebox' key={index}><MessageBox isSelf={n.isSelf}/></div>);
 
     return (
     <div className='chat'>
