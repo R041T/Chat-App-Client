@@ -3,7 +3,7 @@
     min-height: 25px;
     width: auto;
     min-width: 10px;
-    margin: 20px 0px 20px 0px;
+    margin: 20px 10px 20px 10px;
     border-radius: 5px;
 
 }
@@ -14,14 +14,12 @@
     width: auto;
     min-width: 10px;
     max-width: 400px;
-    border-radius: 5px;
-    margin-right:auto;
-    margin-left: 1rem;
     word-wrap: break-word;
     padding: 1px 10px 1px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;    
+    position: relative;
 }
 
 .message{
@@ -34,15 +32,43 @@
     background-color: #032734;
     color: white;
     margin-right: 1rem;
+    border-radius: 5px 0px 5px 5px;
 }
 
 .message-friend{
     margin-right:auto;
     margin-left: 1rem;
     background-color: gray;
+    border-radius: 0px 5px 5px 5px;
     color: white;
 
 }
+
+.message-self:after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 7px solid #032734;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #032734;
+    border-bottom: 7px solid transparent;
+    right: -13px;
+    top: 0px;
+  }
+
+  .message-friend:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 7px solid transparent;
+    border-right: 7px solid gray;
+    border-top: 7px solid gray;
+    border-bottom: 7px solid transparent;
+    left: -13px;
+    top: 0px;
+  }
 
 .msg-info{
     margin-left: 15px;
