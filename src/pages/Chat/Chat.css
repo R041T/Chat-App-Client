@@ -63,7 +63,6 @@ html,body{
 
 .tools-nav{
     grid-area: toolsnav;
-    border-top-left-radius: 5px;
     background: var(--chat-theme);
 }
 
@@ -74,6 +73,7 @@ html,body{
     width: 98%;
     background: #F6F9FA;
     border-radius: 2%;
+    overflow-x: hidden;
 }
 
 .chat-field-container{
