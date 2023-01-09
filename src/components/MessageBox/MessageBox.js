@@ -13,7 +13,6 @@ export function MessageBox({isSelf}){
 }
 
 function getClass(isSelf){
-    console.log(isSelf);
     if(isSelf) return 'message-self';
     else if(!isSelf) return 'message-friend';
 }
