@@ -1,12 +1,18 @@
 import './Home.css'
 import {NavbarLanding} from '../../components/Navbar/Navbar'
 import {LoginButton} from '../../components/LoginButton/LoginButton'
-import {SignUpButton} from '../../components/SignUpButton/SignUpButton'
 import {LandingHero} from '../../components/LandingHero/LandingHero'
+import {auth} from '../../firebaseAuth'
 
 
 
 export function Home(){
+
+    auth.onAuthStateChanged(function(user) {
+        if (user) {
+            window.location.href = "http://localhost:3000/chat";
+        }
+      });
     return (
 <div className='home'>
         <NavbarLanding/>
@@ -16,8 +22,9 @@ export function Home(){
                 <p id='subheading-text'> Stay connected with your friends & family without interruption. 
                 Send pictures, Images are more to people instantly accross the world.</p>
                 <div id="buttons">
+
                     <div className='buttons' style={{"marginRight":"20px", "display":"inline"}}><LoginButton></LoginButton></div>
-                    <div className='buttons' style={{"display":"inline"}}><SignUpButton/></div>
+
                 </div>
                 
             </div>
