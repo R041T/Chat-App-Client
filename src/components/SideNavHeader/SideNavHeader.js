@@ -13,7 +13,7 @@ export function SideNavheader(){
 
 function handleClick(){
     signOut(auth).then(() => {
-      window.location.href = "http://localhost:3000";
+      window.location.href = process.env.REACT_APP_HOST_URL;
     }).catch((error) => {
       // An error happened.
     });
