@@ -8,11 +8,7 @@ import {auth} from '../../firebaseAuth'
 
 export function Home(){
 
-    auth.onAuthStateChanged(function(user) {
-        if (user) {
-            window.location.href = process.env.REACT_APP_HOST_URL+"/chat";
-        }
-      });
+    
     return (
 <div className='home'>
         <NavbarLanding/>

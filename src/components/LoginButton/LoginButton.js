@@ -1,31 +1,37 @@
 import './LoginButton.css'
-import {Link} from 'react-router-dom'
 import {auth,provider} from '../../firebaseAuth'
-import {signInWithPopup, GoogleAuthProvider, onAuthStateChanged} from 'firebase/auth';
+import {signInWithPopup} from 'firebase/auth';
+import axios from 'axios';
 
+async function handleLogin(){
 
-function handleLogin(){
-
-  signInWithPopup(auth, provider)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      window.location.href=process.env.REACT_APP_HOST_URL+"/chat";
+    } else {
+      signInWithPopup(auth, provider)
+  .then(async (result) => {
+    //const credential = GoogleAuthProvider.credentialFromResult(result);
     // The signed-in user info.
-    const user = result.user;
-    console.log(user);
-    //window.location.href = "http://localhost:3000/chat";
-    // ...
+    let payload = { email: result.user.email, name: result.user.displayName, photoUrl: result.user.photoURL};
+    await axios.post(`${process.env.REACT_APP_API_BASE_URL}`, payload);
+    window.location.href = process.env.REACT_APP_HOST_URL+"/chat";
+
+
+
   }).catch((error) => {
     // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
+    // const errorCode = error.code;
+    // const errorMessage = error.message;
+    // // The email of the user's account used.
+    // const email = error.customData.email;
+    // // The AuthCredential type that was used.
+    // const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
   });
+    }
+  }); 
+  
     
 }
 
