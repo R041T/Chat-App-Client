@@ -2,12 +2,25 @@
 .header-div{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-.sidenavTitle{
-    color: white;
+.avatarimage{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background-color: white;
+}
+.profile{
     margin-left: 3%;
+}
+.profile:hover{
+    cursor: pointer;
 }
 
 .signout-btn{
     color: white;
+    margin-right: 2%;
+}
+.signout-btn:hover{
+    cursor: pointer;
 }

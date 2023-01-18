@@ -6,7 +6,6 @@ import {SideNavheader} from '../../components/SideNavHeader/SideNavHeader'
 import {MessageBox} from '../../components/MessageBox/MessageBox'
 
 export function Chat(){
-    let arr = [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
     let arr2 =[{'no':1,'isSelf':false},{'no':1,'isSelf':true},{'no':1,'isSelf':true},{'no':1,'isSelf':true},
     {'no':1,'isSelf':false},{'no':1,'isSelf':false},{'no':1,'isSelf':true},{'no':1,'isSelf':true},{'no':1,'isSelf':false}
     ,{'no':1,'isSelf':true},{'no':1,'isSelf':false},{'no':1,'isSelf':true},{'no':1,'isSelf':false},{'no':1,'isSelf':true}
