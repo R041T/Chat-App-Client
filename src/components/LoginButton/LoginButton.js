@@ -4,7 +4,6 @@ import {signInWithPopup} from 'firebase/auth';
 import axios from 'axios';
 
 async function handleLogin(){
-
   auth.onAuthStateChanged((user) => {
     if (user) {
       window.location.href=process.env.REACT_APP_HOST_URL+"/chat";
