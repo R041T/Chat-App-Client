@@ -2,8 +2,10 @@ import './LoginButton.css'
 import {auth,provider} from '../../firebaseAuth'
 import {signInWithPopup} from 'firebase/auth';
 import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import {userDataAdd} from '../../store/userSlice'
 
-async function handleLogin(){
+async function handleLogin(dispatch){
 
   auth.onAuthStateChanged((user) => {
     if (user) {
@@ -11,8 +13,9 @@ async function handleLogin(){
     } else {
       signInWithPopup(auth, provider)
   .then(async (result) => {
-    //const credential = GoogleAuthProvider.credentialFromResult(result);
-    // The signed-in user info.
+
+    console.log('using dispatch');    
+    await dispatch(userDataAdd());
     let payload = { email: result.user.email, name: result.user.displayName, photoUrl: result.user.photoURL};
     await axios.post(`${process.env.REACT_APP_API_BASE_URL}`, payload);
     window.location.href = process.env.REACT_APP_HOST_URL+"/chat";
@@ -36,8 +39,9 @@ async function handleLogin(){
 }
 
 export function LoginButton(){
+  const dispatch = useDispatch();
     return(
-        <button className='loginBtn' onClick={handleLogin}>
+        <button className='loginBtn' onClick={()=>{handleLogin(); dispatch(userDataAdd())}}>
         Sign In
       </button>
     );

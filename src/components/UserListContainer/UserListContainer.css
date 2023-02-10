@@ -1,0 +1,32 @@
+.user-details{
+    height: inherit;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: solid 0.5px;
+    border-color: gray;}
+
+.avatar{
+    height: 100%;
+    text-align: left;
+    width: 50px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.avatarimg{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    vertical-align: middle;
+    align-items:center ;
+}
+
+.username{
+    margin: 0px 0px 20px 20px;
+}
+
+.addimg{
+    text-align: right;
+}
