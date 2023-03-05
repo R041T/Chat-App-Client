@@ -1,28 +1,27 @@
 import './ChatSearch.css'
 import React, { useState } from 'react';
 import {UserListContainer} from '../UserListContainer/UserListContainer'
+import axios from 'axios'
+import {useSelector} from 'react-redux'
+
+
 
 export function ChatSearch(){
     const [displayResult, setResultState] = useState('result-not-visible');
     const [iconState, setIconState] = useState('magnifying-icon');
+    const [userList, setUserList] = useState([]);
 
-    const processChange = debounce(()=> fetchUsers());
-    let userdetails = [
-        {name:"rohit",picture:"https://lh3.googleusercontent.com/a/AEdFTp4ZunOpBImkAKBzwP4XXPDcPAlulGWtpXqELk8NcD0"},
-        {name:"rohit2",picture:"https://lh3.googleusercontent.com/a/AEdFTp4ZunOpBImkAKBzwP4XXPDcPAlulGWtpXqELk8NcD0"},
-        {name:"rohit2",picture:"https://lh3.googleusercontent.com/a/AEdFTp4ZunOpBImkAKBzwP4XXPDcPAlulGWtpXqELk8NcD0"},
-        {name:"rohit2",picture:"https://lh3.googleusercontent.com/a/AEdFTp4ZunOpBImkAKBzwP4XXPDcPAlulGWtpXqELk8NcD0"},
-        {name:"rohit2",picture:"https://lh3.googleusercontent.com/a/AEdFTp4ZunOpBImkAKBzwP4XXPDcPAlulGWtpXqELk8NcD0"},
-        {name:"rohit2",picture:"https://lh3.googleusercontent.com/a/AEdFTp4ZunOpBImkAKBzwP4XXPDcPAlulGWtpXqELk8NcD0"}
-    ]
+    const debounceLoadData = debounce(fetchUsers);
+    const userdetail = useSelector(state => state.user)
 
-    let UserListContainers = userdetails.map((n,index)=><div className='user-list-container' key={index}><UserListContainer/></div>)
+
+    let UserListContainers = userList.map((n,index)=><div className='user-list-container' key={index}><UserListContainer Chatid={n.chatid} Userid={n.userid} Email={n.email} Name={n.name} PhotoUrl={n.photoUrl} Time={n.time} Snippet={n.snippet} Unread={n.unread} RemoveFromUserList={removeFromUserList} /></div>)
 
     return (
     <>
         <div className='search-bar'>        
             <div className={`search-icon ${iconState}`} onClick={updateSearchStates}></div>
-            <input type='text' placeholder='Search User' id = 'searchInput' onKeyUp={processChange}></input>
+            <input type='text' placeholder='Search User' id = 'searchInput' onChange={e=>debounceLoadData(e.target.value)}/>
         </div>
         <div className={`search-results ${displayResult}`} >
             <div style={{marginTop: "10px"}}>
@@ -33,25 +32,33 @@ export function ChatSearch(){
     );
 
 
-function debounce(func, timeout = 500){
+
+function debounce(func, timeout = 700){
     let timer;
-    return ()=>{
+    return (searchState)=>{
         clearTimeout(timer);
-        timer = setTimeout(()=>{func();},timeout);
+        timer = setTimeout(()=>{func(searchState);},timeout);
         };
     }
     
     
-    function fetchUsers(){
+    async function fetchUsers(searchTerm){
         setResultState('result-visible');
         setIconState('cancel-icon');
+        let payload = { searchterm: searchTerm ,curruser: userdetail.user.email};
+        const result  = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/userlist`,payload)
+        console.log(result);
+        setUserList(result.data)
 
-        console.log(displayResult);
     }
 
     function updateSearchStates(){
         setResultState('result-not-visible');
         setIconState('magnifying-icon');
+    }
+
+    function removeFromUserList(email){
+        setUserList(userList.filter(function(user){return user.email !== email}))       
     }
 }
 

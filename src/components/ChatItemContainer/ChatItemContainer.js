@@ -1,25 +1,34 @@
 import './ChatItemContainer.css'
+import {useDispatch} from 'react-redux'
+import {updateCurrentChat} from '../../store/currentChat'
 
-export function ChatItemContainer(){
+
+export function ChatItemContainer({ChatID,Name, PhotoUrl, Time,Snippet,Unread}){
+    const dispatch = useDispatch();
+
     return (
         <div className='chatitem'>
             <div className='avatar'>
-                <img src='http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcTUNYRJGfr6dAmrrvtz8mF5qV0ojVV9cuEFzswwOcfqxd4EDeDD05eO-KSs2uLidN92YVgeCdcpdthCF4E' alt='avatarimage' className='avatarimg'/>
+                <img src={PhotoUrl} alt='avatarimage' className='avatarimg'/>
             </div>
-            <div className='message-summary'>
+            <div className='message-summary' onClick={()=>handleClick()}>
                 <div className='chat-item-row1'>
                     <header className='chat-name'>
-                        <b><p>Rohit Mahesh</p></b>
+                        <b><p>{Name}</p></b>
                     </header>
-                    <p className='last-chat-time'> Yesterday</p>
+                    <p className='last-chat-time'> {Time}</p>
                 </div>
                 
                 <div className='chat-item-row2'>
-                    <p className='chat-snippet'>Hey, Let's goooo</p>
-                    <p className='unread-count'> 2</p>
+                    <p className='chat-snippet'>{Snippet}</p>
+                    <p className='unread-count'> {Unread}</p>
                 </div>
                 
             </div>
         </div>
     );
+
+    function handleClick(){
+        dispatch(updateCurrentChat(ChatID));
+    }
 }

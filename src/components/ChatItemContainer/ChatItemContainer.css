@@ -4,6 +4,9 @@
     display: flex;
     justify-content: center;
 }
+.message-summary:hover{
+    cursor: pointer;
+}
 
 .avatar{
     height: 100%;

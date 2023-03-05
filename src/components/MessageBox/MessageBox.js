@@ -1,18 +1,25 @@
 import './MessageBox.css'
+import {useSelector} from 'react-redux'
 
-export function MessageBox({isSelf}){
-    return (
-        <div className={`message-div ${getClass(isSelf)}`}>
-        <p className='message'>Hey this is a smeßsssssssssssssssssssssssssssssssssssage</p>
-        <div className='msg-info'>
-        <span className='msg-time'>12:45pm</span>
-        <span className='read-receipt'>read</span>
-        </div>
-        </div>
-    );
+export function MessageBox({Message}){
+    const user = useSelector(state =>state.user).user;
+
+    if(user!==undefined){
+        return (
+            <div className={`message-div ${getClass(Message)}`}>
+            <p className='message'>{Message.message}</p>
+            <div className='msg-info'>
+            <span className='msg-time'>{Message.timestamp}</span>
+            <span className='read-receipt'>{Message.readstatus}</span>
+            </div>
+            </div>
+        );
+    
+    }
+   
+    function getClass(message){
+            if(message.senderemail===user.email) return 'message-self';
+            else return 'message-friend';       
+    }
 }
 
-function getClass(isSelf){
-    if(isSelf) return 'message-self';
-    else if(!isSelf) return 'message-friend';
-}

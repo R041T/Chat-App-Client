@@ -1,9 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit'
 import userSlice from './userSlice'
+import chatListSlice from './chatListSlice'
+import chatMessagesSlice from './chatMessages'
+import currentChatSlice from './currentChat'
+
 
 const store = configureStore({
   reducer: {
-    counter: userSlice,
+    user: userSlice,
+    chatlist: chatListSlice,
+    chatmessages: chatMessagesSlice,
+    currentchat: currentChatSlice
   },
 })
 
