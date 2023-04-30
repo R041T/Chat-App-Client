@@ -3,6 +3,7 @@
     width: 100%;
     border-radius: 1%;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 .chat-item-container{
     margin-top: 10px;

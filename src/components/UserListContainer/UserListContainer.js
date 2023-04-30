@@ -2,6 +2,7 @@ import './UserListContainer.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { chatListAdd } from '../../store/chatListSlice'
 import axios from 'axios'
+import { socket } from '../../socket';
 
 export function UserListContainer({Chatid, Userid, Email,Name,PhotoUrl,Time,Snippet,Unread, RemoveFromUserList}){
     const dispatch = useDispatch();
@@ -23,10 +24,9 @@ export function UserListContainer({Chatid, Userid, Email,Name,PhotoUrl,Time,Snip
 
     async function handleAddUser(removeFromUserList){
         removeFromUserList(Email);
-        console.log(userdetail.user.id,Userid);
         let payload = { isPrivate: true,starter: userdetail.user.id, recipient: Userid} ;
        const result = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/addchat`, payload);
-        dispatch(chatListAdd({chatid: result.data, email:Email, name:Name, photoUrl: PhotoUrl,time:Time,snippet:Snippet,unread:Unread}))
-
+        dispatch(chatListAdd({chatid: result.data, name:Name, photoUrl: PhotoUrl,isNewChat:true ,messages:[]}))
+        socket.emit("notify-user",{roomid:result.data, recipient:Userid});
     }
 }

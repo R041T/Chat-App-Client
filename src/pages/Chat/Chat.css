@@ -10,14 +10,21 @@ html,body{
     display: grid;
     position: relative;
     height: 100%;
-    grid-template-columns: 4fr 10fr 1fr;
+    grid-template-columns: 2fr 10fr ;
+    grid-template-rows: 70px 10fr ;
+    grid-template-areas: 
+    "sideheader header "
+    "sidenav main "
+    "sidenav chatfield ";
+
+
+    /* include this css instead when having toolsnav */
+    /* grid-template-columns: 4fr 10fr 1fr;
     grid-template-rows: 70px 10fr 1fr;
     grid-template-areas: 
     "sideheader header toolsnav"
     "sidenav main toolsnav"
-    "sidenav chatfield toolsnav";
-
-    
+    "sidenav chatfield toolsnav"; */
 }
 
 .sidenav-header{
@@ -25,16 +32,23 @@ html,body{
     border-bottom: 1px solid;
     border-color: white;
     background: var(--chat-theme);
-
+    border-bottom-right-radius: 10px;
 }
 
 .chat-header{
     grid-area: header;
     background: var(--chat-theme);
-    margin: 0px 2px 0px 2px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    
+    margin: 0px 0px 0px 1px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.chat-header-text{
+    margin-left: 30px;
+    font-size: medium;
 }
 
 
@@ -43,7 +57,7 @@ html,body{
     background: var(--chat-theme);
     text-align: center;
     height: 100%;
-    min-width: 300px;
+    min-width: 310px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,7 +83,6 @@ html,body{
 
 .chatbody{
     height: 100%;
-    max-height: 720px;
     overflow-y: scroll;
     width: 98%;
     background: #F6F9FA;
@@ -83,4 +96,12 @@ html,body{
     border-color: lightgray;
     border-bottom-right-radius: 20px;
     margin-top: 10px;
+}
+
+.hide-field{
+    display: none;
+}
+
+.selected-dimensions{
+    max-height: 720px;
 }

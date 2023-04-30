@@ -21,7 +21,7 @@
 
 #chatinput:focus{
     border: none;
-    outline: 2px solid darksalmon;
+    outline: 2px solid teal;
 }
 
 .sendbtn{

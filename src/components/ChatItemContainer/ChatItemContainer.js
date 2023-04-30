@@ -1,11 +1,16 @@
 import './ChatItemContainer.css'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {updateCurrentChat} from '../../store/currentChat'
+import { selectLastMessage} from '../../store/chatListSlice';
 
 
-export function ChatItemContainer({ChatID,Name, PhotoUrl, Time,Snippet,Unread}){
+export function ChatItemContainer({ChatID,Name, PhotoUrl, Time,Unread=0,IsNewChat=false}){
     const dispatch = useDispatch();
-
+    let lastMessageDetails = useSelector((state) =>selectLastMessage(state, ChatID));
+    let messageSnippet ="";
+    if(lastMessageDetails!==undefined){
+        messageSnippet=lastMessageDetails.message;
+    }
     return (
         <div className='chatitem'>
             <div className='avatar'>
@@ -20,8 +25,8 @@ export function ChatItemContainer({ChatID,Name, PhotoUrl, Time,Snippet,Unread}){
                 </div>
                 
                 <div className='chat-item-row2'>
-                    <p className='chat-snippet'>{Snippet}</p>
-                    <p className='unread-count'> {Unread}</p>
+                    <div className='chat-snippet'>{messageSnippet}</div>
+                    {/* <p className='unread-count'> {Unread}</p> */}
                 </div>
                 
             </div>
@@ -29,6 +34,6 @@ export function ChatItemContainer({ChatID,Name, PhotoUrl, Time,Snippet,Unread}){
     );
 
     function handleClick(){
-        dispatch(updateCurrentChat(ChatID));
+        dispatch(updateCurrentChat({chatid:ChatID,name:Name,isNewChat:IsNewChat}));
     }
 }
