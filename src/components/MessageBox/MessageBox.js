@@ -18,7 +18,7 @@ export function MessageBox({Message}){
     }
    
     function getClass(message){
-            if(message.senderemail===user.email) return 'message-self';
+            if(message.sender===user.id) return 'message-self';
             else return 'message-friend';       
     }
 }

@@ -45,9 +45,8 @@ function debounce(func, timeout = 700){
     async function fetchUsers(searchTerm){
         setResultState('result-visible');
         setIconState('cancel-icon');
-        let payload = { searchterm: searchTerm ,curruser: userdetail.user.email};
+        let payload = { searchterm: searchTerm ,curruser: userdetail.user.id};
         const result  = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/userlist`,payload)
-        console.log(result);
         setUserList(result.data)
 
     }
