@@ -27,10 +27,7 @@ export function LoginButton(){
         } else {
           signInWithPopup(auth, provider)
       .then(async (result) => {
-    
         
-        //window.location.href = process.env.REACT_APP_HOST_URL+"/chat";
-    
     
     
       }).catch((error) => {
