@@ -1,0 +1,16 @@
+.privacy{
+    overflow-y: scroll;
+    height: 100%;
+    background: rgb(3,39,52);
+    background: linear-gradient(133deg, rgba(3,39,52,1) 2%, rgba(5,54,64,1) 52%, rgba(3,39,52,1) 100%);
+    color: white;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+    margin-top: 3%;
+    margin-right: 5%;
+}
