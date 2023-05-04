@@ -85,7 +85,7 @@ html,body{
 .chatbody{
     height: 100vh;
     overflow-y: scroll;
-    width: 98%;
+    width: 100%;
     background: #F6F9FA;
     border-radius: 2%;
     overflow-x: hidden;
