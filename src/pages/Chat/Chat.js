@@ -162,8 +162,8 @@ export function Chat(){
             <div id='chat-body' className={`chatbody ${getBodyClass(isChatSelected)}`}>
             <ChatBody isChatSelected={isChatSelected}/>
             </div>
-            <div className={`chat-field-container ${getFieldClass(isChatSelected)}`}><ChatField currentChatId={currChatId} isNewChat={isCurrChatNew}/></div>
         </main>
+        <div className={`chat-field-container ${getFieldClass(isChatSelected)}`}><ChatField currentChatId={currChatId} isNewChat={isCurrChatNew}/></div>
 
         {/* <section className='tools-nav'><ToolsNav/></section>  */}
         {/* include for toolsnav section
