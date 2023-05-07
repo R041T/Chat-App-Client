@@ -67,6 +67,7 @@ html,body{
 .main-chat{
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
     align-items: center;
     grid-area: main;
     margin-top: 1vh;
