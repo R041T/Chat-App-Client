@@ -16,7 +16,7 @@ export function Home(){
             <div id="div-text">
                 <p id="landing-text">The <em>Ultimate</em> Communication Platform</p>
                 <p id='subheading-text'> Stay connected with your friends & family without interruption. 
-                Send pictures, Images are more to people instantly accross the world.</p>
+                Search for and send messages to people instantly accross the world.</p>
                 <div id="buttons">
 
                     <div className='buttons' style={{"marginRight":"20px", "display":"inline"}}><LoginButton></LoginButton></div>
