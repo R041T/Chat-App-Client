@@ -47,10 +47,24 @@ em{
     color: darksalmon;
 }
 
-
-.loginLanding{
-}
-
 .buttons{
     height: 50px;
 }
+
+@media only screen and (max-width: 487px) {
+    #landing-image {
+      display: none;
+    }
+
+    #div-text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #landing-text{
+        text-align: center;
+    }
+    #subheading-text{
+        text-align: center;
+    }
+  }
